@@ -14,6 +14,22 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def emptyline(self):
+        """Do nothing when an empty line is entered"""
+        pass
+
+    def do_quit(self, arg):
+        """Quit command to exit the program"""
+        return True
+
+    def do_EOF(self, arg):
+        """Exit the console on EOF"""
+        print()
+        return True
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
+
     def default(self, line):
         """Catch commands if nothing else matches then."""
         # print("DEF:::", line)
@@ -83,9 +99,6 @@ class HBNBCommand(cmd.Cmd):
         """Exits the program.
         """
         return True
-
-    if __name__ == '__main__':
-    HBNBCommand().cmdloop()
 
     def emptyline(self):
         """Doesn't do anything on ENTER.
