@@ -84,6 +84,9 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
+    if __name__ == '__main__':
+    HBNBCommand().cmdloop()
+
     def emptyline(self):
         """Doesn't do anything on ENTER.
         """
